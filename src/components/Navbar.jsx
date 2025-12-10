@@ -17,15 +17,21 @@ export function Navbar({ onWriteReview }) {
   ];
 
   return (
-    <nav className="bg-clapbac-navy text-white sticky top-0 z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-clapbac-navy via-clapbac-navy to-clapbac-navy-light text-white sticky top-0 z-50 shadow-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-clapbac-gold rounded-lg flex items-center justify-center">
-              <span className="font-display font-bold text-clapbac-navy text-lg">CB</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-clapbac-gold to-clapbac-gold-light rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <span className="text-xl">👏</span>
+              </div>
+              <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-clapbac-coral rounded-full animate-pulse"></div>
             </div>
-            <span className="font-display text-xl font-bold hidden sm:block">CLAPBAC</span>
+            <div className="hidden sm:block">
+              <span className="font-display text-xl font-bold tracking-tight">CLAP<span className="text-clapbac-gold">BAC</span></span>
+              <span className="block text-[10px] text-white/50 -mt-1 font-accent tracking-widest">TURN THE TABLES</span>
+            </div>
           </Link>
 
           {/* Desktop Search */}
@@ -34,25 +40,30 @@ export function Navbar({ onWriteReview }) {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-clapbac-gold ${
-                  isActive(link.path) ? 'text-clapbac-gold' : 'text-white/80'
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg ${
+                  isActive(link.path)
+                    ? 'text-white bg-white/10'
+                    : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {link.label}
+                {isActive(link.path) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-clapbac-gold rounded-full"></span>
+                )}
               </Link>
             ))}
           </div>
 
           {/* Write Review Button & Restaurant Badge */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <button
               onClick={onWriteReview}
-              className="btn-primary flex items-center gap-2"
+              className="btn-primary flex items-center gap-2 text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -61,14 +72,17 @@ export function Navbar({ onWriteReview }) {
             </button>
 
             {/* Current Restaurant Badge */}
-            <div className="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-1.5">
+            <div className="flex items-center gap-2 glass-dark rounded-xl px-3 py-2">
               <div
-                className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold text-white"
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm"
                 style={{ backgroundColor: currentRestaurant.color }}
               >
                 {currentRestaurant.initials}
               </div>
-              <span className="text-sm text-white/80">{currentRestaurant.name}</span>
+              <div className="text-left">
+                <span className="block text-xs text-white/50">Logged in as</span>
+                <span className="block text-sm font-medium text-white/90 -mt-0.5">{currentRestaurant.name}</span>
+              </div>
             </div>
           </div>
 
@@ -92,19 +106,19 @@ export function Navbar({ onWriteReview }) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-white/10">
+        <div className="md:hidden border-t border-white/10 animate-fade-in">
           <div className="px-4 py-3">
             <SearchBar />
           </div>
-          <div className="px-2 pb-3 space-y-1">
+          <div className="px-3 pb-4 space-y-1">
             {navLinks.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
                   isActive(link.path)
-                    ? 'bg-clapbac-gold text-clapbac-navy'
+                    ? 'bg-gradient-to-r from-clapbac-gold to-clapbac-gold-light text-clapbac-navy shadow-glow'
                     : 'text-white/80 hover:bg-white/10'
                 }`}
               >
@@ -116,7 +130,7 @@ export function Navbar({ onWriteReview }) {
                 setMobileMenuOpen(false);
                 onWriteReview();
               }}
-              className="w-full mt-2 btn-primary flex items-center justify-center gap-2"
+              className="w-full mt-3 btn-primary flex items-center justify-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -125,16 +139,16 @@ export function Navbar({ onWriteReview }) {
             </button>
           </div>
           {/* Current Restaurant in Mobile */}
-          <div className="px-4 py-3 border-t border-white/10 bg-white/5">
-            <p className="text-xs text-white/60 mb-1">Logged in as:</p>
-            <div className="flex items-center gap-2">
+          <div className="px-4 py-4 border-t border-white/10 glass-dark mx-3 mb-3 rounded-xl">
+            <p className="text-xs text-white/50 mb-2 uppercase tracking-wider">Logged in as</p>
+            <div className="flex items-center gap-3">
               <div
-                className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold text-white"
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-md"
                 style={{ backgroundColor: currentRestaurant.color }}
               >
                 {currentRestaurant.initials}
               </div>
-              <span className="text-sm text-white">{currentRestaurant.name}</span>
+              <span className="text-sm font-medium text-white">{currentRestaurant.name}</span>
             </div>
           </div>
         </div>

@@ -28,3 +28,5 @@ coverage/
 
 # Playwright screenshots (optional - keeping for now)
 # .playwright-mcp/
+.vercel
+.playwright-mcp/

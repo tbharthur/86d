@@ -61,13 +61,13 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
   };
 
   const variantStyles = {
-    default: 'bg-white/10 border-white/20 text-white placeholder-white/50 focus:bg-white/20',
-    light: 'bg-white border-gray-300 text-clapbac-navy placeholder-gray-400 focus:ring-2 focus:ring-clapbac-gold focus:border-transparent'
+    default: 'bg-white/10 border-white/10 text-white placeholder-white/50 focus:bg-white/15 focus:border-white/20 backdrop-blur-sm',
+    light: 'bg-white border-slate-200 text-clapbac-navy placeholder-slate-400 focus:ring-2 focus:ring-clapbac-gold/30 focus:border-clapbac-gold shadow-soft'
   };
 
   return (
     <div className="relative">
-      <div className="relative">
+      <div className="relative group">
         <input
           ref={inputRef}
           type="text"
@@ -76,11 +76,11 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
           onKeyDown={handleKeyDown}
           onFocus={() => query.length >= 2 && setIsOpen(true)}
           placeholder={placeholder}
-          className={`w-full pl-10 pr-4 py-2 rounded-lg border outline-none transition-all ${variantStyles[variant]}`}
+          className={`w-full pl-11 pr-4 py-3 rounded-xl border outline-none transition-all duration-200 ${variantStyles[variant]}`}
         />
         <svg
-          className={`absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 ${
-            variant === 'light' ? 'text-gray-400' : 'text-white/50'
+          className={`absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors duration-200 ${
+            variant === 'light' ? 'text-slate-400 group-focus-within:text-clapbac-gold' : 'text-white/50 group-focus-within:text-white/70'
           }`}
           fill="none"
           stroke="currentColor"
@@ -94,14 +94,14 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
       {isOpen && results.length > 0 && (
         <div
           ref={resultsRef}
-          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
+          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-50 animate-scale-in"
         >
           {results.map((reviewer, index) => (
             <button
               key={reviewer.id}
               onClick={() => handleSelect(reviewer)}
-              className={`w-full text-left p-3 flex items-center gap-3 transition-colors ${
-                index === selectedIndex ? 'bg-clapbac-gold/10' : 'hover:bg-gray-50'
+              className={`w-full text-left p-4 flex items-center gap-3 transition-all duration-150 ${
+                index === selectedIndex ? 'bg-clapbac-gold/10' : 'hover:bg-slate-50'
               }`}
             >
               <ReviewerAvatar reviewer={reviewer} size="sm" />
@@ -112,22 +112,22 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
                   </span>
                   {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
                 </div>
-                <p className="text-xs text-gray-500 truncate">
+                <p className="text-xs text-slate-400 truncate">
                   {reviewer.location} • {Object.values(reviewer.handles).join(', ')}
                 </p>
               </div>
               <StarRating rating={reviewer.aggregateRating} size="sm" />
             </button>
           ))}
-          <div className="px-3 py-2 bg-gray-50 border-t border-gray-100">
+          <div className="px-4 py-3 bg-slate-50 border-t border-slate-100">
             <button
               onClick={() => {
                 setIsOpen(false);
                 navigate(`/browse?q=${encodeURIComponent(query)}`);
               }}
-              className="text-sm text-clapbac-gold hover:underline"
+              className="text-sm font-medium text-clapbac-gold hover:text-clapbac-gold-dark transition-colors"
             >
-              See all results for "{query}"
+              See all results for "{query}" →
             </button>
           </div>
         </div>
@@ -137,12 +137,12 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
       {isOpen && query.length >= 2 && results.length === 0 && (
         <div
           ref={resultsRef}
-          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50"
+          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 p-6 z-50 animate-scale-in"
         >
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-sm text-slate-600 text-center font-medium">
             No reviewers found for "{query}"
           </p>
-          <p className="text-xs text-gray-400 text-center mt-1">
+          <p className="text-xs text-slate-400 text-center mt-1">
             Try searching by Yelp username or location
           </p>
         </div>
@@ -154,11 +154,13 @@ export function SearchBar({ variant = 'default', placeholder = 'Search by Yelp u
 export function SearchBarLarge() {
   return (
     <div className="max-w-2xl mx-auto">
-      <SearchBar
-        variant="light"
-        placeholder="Search for a reviewer by Yelp username, Google profile, or Instagram handle..."
-      />
-      <p className="text-center text-sm text-gray-500 mt-2">
+      <div className="relative">
+        <SearchBar
+          variant="light"
+          placeholder="Search for a reviewer by Yelp username, Google profile, or Instagram..."
+        />
+      </div>
+      <p className="text-center text-sm text-white/50 mt-3">
         Look up anyone who's reviewed your restaurant
       </p>
     </div>
