@@ -17,19 +17,19 @@ export function Navbar({ onWriteReview }) {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-clapbac-navy via-clapbac-navy to-clapbac-navy-light text-white sticky top-0 z-50 shadow-xl border-b border-white/5">
+    <nav className="bg-gradient-to-r from-brand-navy via-brand-navy to-brand-navy-light text-white sticky top-0 z-50 shadow-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-clapbac-gold to-clapbac-gold-light rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <span className="text-xl">👏</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-brand-gold to-brand-gold-light rounded-xl flex items-center justify-center shadow-glow group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <span className="text-xl">🚫</span>
               </div>
-              <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-clapbac-coral rounded-full animate-pulse"></div>
+              <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-brand-coral rounded-full animate-pulse"></div>
             </div>
             <div>
-              <span className="font-display text-lg sm:text-xl font-bold tracking-tight">CLAP<span className="text-clapbac-gold">BAC</span></span>
+              <span className="font-display text-lg sm:text-xl font-bold tracking-tight">86<span className="text-brand-gold">'d</span></span>
               <span className="hidden sm:block text-[10px] text-white/50 -mt-1 font-accent tracking-widest">TURN THE TABLES</span>
             </div>
           </Link>
@@ -53,7 +53,7 @@ export function Navbar({ onWriteReview }) {
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-clapbac-gold rounded-full"></span>
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-brand-gold rounded-full"></span>
                 )}
               </Link>
             ))}
@@ -118,7 +118,7 @@ export function Navbar({ onWriteReview }) {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${
                   isActive(link.path)
-                    ? 'bg-gradient-to-r from-clapbac-gold to-clapbac-gold-light text-clapbac-navy shadow-glow'
+                    ? 'bg-gradient-to-r from-brand-gold to-brand-gold-light text-brand-navy shadow-glow'
                     : 'text-white/80 hover:bg-white/10'
                 }`}
               >

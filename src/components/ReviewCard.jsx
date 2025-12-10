@@ -25,7 +25,7 @@ export function ReviewCard({ review, showReviewer = true, showRestaurant = true 
           )}
           <div>
             {showRestaurant && restaurant && (
-              <h4 className="font-semibold text-clapbac-navy">{restaurant.name}</h4>
+              <h4 className="font-semibold text-brand-navy">{restaurant.name}</h4>
             )}
             <p className="text-sm text-slate-400">
               {formatDate(review.date)}
@@ -50,10 +50,10 @@ export function ReviewCard({ review, showReviewer = true, showRestaurant = true 
           className="flex items-center gap-3 mt-4 p-3 -mx-1 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors group"
         >
           <ReviewerAvatar reviewer={reviewer} size="sm" />
-          <span className="text-sm font-medium text-clapbac-navy group-hover:text-clapbac-gold transition-colors">
+          <span className="text-sm font-medium text-brand-navy group-hover:text-brand-gold transition-colors">
             About: {reviewer.displayName}
           </span>
-          <svg className="w-4 h-4 text-slate-400 ml-auto group-hover:text-clapbac-gold group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-slate-400 ml-auto group-hover:text-brand-gold group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>
@@ -92,7 +92,7 @@ export function ReviewCard({ review, showReviewer = true, showRestaurant = true 
 
       {/* Footer */}
       <div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-100">
-        <button className="flex items-center gap-2 text-sm text-slate-400 hover:text-clapbac-gold transition-colors group">
+        <button className="flex items-center gap-2 text-sm text-slate-400 hover:text-brand-gold transition-colors group">
           <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
           </svg>
@@ -137,7 +137,7 @@ export function ReviewCardCompact({ review }) {
         <div className="flex items-center gap-3">
           {restaurant && <RestaurantAvatar restaurant={restaurant} size="sm" />}
           <div>
-            <p className="text-sm font-semibold text-clapbac-navy">{restaurant?.name}</p>
+            <p className="text-sm font-semibold text-brand-navy">{restaurant?.name}</p>
             <p className="text-xs text-slate-400">{formatDate(review.date)}</p>
           </div>
         </div>
@@ -147,7 +147,7 @@ export function ReviewCardCompact({ review }) {
       {reviewer && (
         <Link
           to={`/reviewer/${reviewer.id}`}
-          className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-slate-500 hover:text-clapbac-gold transition-colors group/link"
+          className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-slate-500 hover:text-brand-gold transition-colors group/link"
         >
           <span className="text-slate-400">Re:</span> {reviewer.displayName}
           <svg className="w-3 h-3 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">

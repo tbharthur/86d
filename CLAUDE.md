@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-CLAPBAC ("Clap Back") is a reverse Yelp prototype where restaurants can review and rate the reviewers who visit them. Built with React + Vite + Tailwind CSS.
+86'd is a reverse Yelp prototype where restaurants can review and rate the reviewers who visit them. Built with React + Vite + Tailwind CSS.
 
 **Live site:** https://clapbac.vercel.app (password protected)
 
@@ -43,7 +43,7 @@ Key exports: `getReviewerById()`, `searchReviewers()`, `getRecentReviews()`
 
 ### Styling
 - Tailwind CSS with custom theme in `tailwind.config.js`
-- Custom colors: `clapbac-gold`, `clapbac-navy`, `clapbac-coral`, `clapbac-mint`
+- Custom colors: `brand-gold`, `brand-navy`, `brand-coral`, `brand-mint`
 - Custom utilities in `src/index.css`: `.btn-primary`, `.btn-secondary`, `.glass`, `.gradient-text`, etc.
 - Fonts: Space Grotesk (display), Outfit (body), Sora (accent) - loaded via Google Fonts in `index.html`
 

@@ -54,7 +54,7 @@ export function WallOfFame() {
       <div className="max-w-5xl mx-auto px-4 py-12">
         {/* What makes a great reviewer */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
-          <h2 className="font-display text-xl font-semibold text-clapbac-navy mb-4">
+          <h2 className="font-display text-xl font-semibold text-brand-navy mb-4">
             What Makes a Great Reviewer?
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -79,7 +79,7 @@ export function WallOfFame() {
         {/* Rest of the list */}
         {restOfList.length > 0 && (
           <>
-            <h2 className="font-display text-2xl font-semibold text-clapbac-navy mb-6">
+            <h2 className="font-display text-2xl font-semibold text-brand-navy mb-6">
               More Great Reviewers
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
@@ -95,7 +95,7 @@ export function WallOfFame() {
                   <ReviewerAvatar reviewer={reviewer} size="md" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-clapbac-navy truncate">
+                      <h3 className="font-semibold text-brand-navy truncate">
                         {reviewer.displayName}
                       </h3>
                       {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
@@ -152,7 +152,7 @@ function PodiumCard({ reviewer, place }) {
       <div className="bg-white rounded-xl shadow-lg p-4 text-center hover:shadow-xl transition-shadow h-full flex flex-col">
         <div className="text-3xl mb-2">{medals[place]}</div>
         <ReviewerAvatar reviewer={reviewer} size={place === 1 ? 'lg' : 'md'} />
-        <h3 className="font-semibold text-clapbac-navy mt-3 truncate">
+        <h3 className="font-semibold text-brand-navy mt-3 truncate">
           {reviewer.displayName}
         </h3>
         <div className="mt-2">
@@ -175,7 +175,7 @@ function QualityCard({ icon, title, description }) {
       <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
         {icon}
       </div>
-      <h3 className="font-semibold text-clapbac-navy mb-1">{title}</h3>
+      <h3 className="font-semibold text-brand-navy mb-1">{title}</h3>
       <p className="text-sm text-gray-600">{description}</p>
     </div>
   );

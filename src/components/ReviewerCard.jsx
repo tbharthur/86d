@@ -15,7 +15,7 @@ export function ReviewerCard({ reviewer, variant = 'default' }) {
           <ReviewerAvatar reviewer={reviewer} size="md" />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <h3 className="font-semibold text-clapbac-navy truncate">{reviewer.displayName}</h3>
+              <h3 className="font-semibold text-brand-navy truncate">{reviewer.displayName}</h3>
               {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
             </div>
             <div className="flex items-center gap-2 mt-1">
@@ -36,13 +36,13 @@ export function ReviewerCard({ reviewer, variant = 'default' }) {
       className="reviewer-card group block bg-white rounded-2xl border border-slate-100 p-6 shadow-card hover:shadow-card-hover relative overflow-hidden"
     >
       {/* Subtle gradient overlay on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-clapbac-gold/0 to-clapbac-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/0 to-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
       <div className="flex items-start gap-4 relative z-10">
         <ReviewerAvatar reviewer={reviewer} size="lg" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="font-display text-xl font-semibold text-clapbac-navy">
+            <h3 className="font-display text-xl font-semibold text-brand-navy">
               {reviewer.displayName}
             </h3>
             {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
@@ -97,7 +97,7 @@ export function ReviewerListItem({ reviewer, onClick }) {
       <ReviewerAvatar reviewer={reviewer} size="md" />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <span className="font-medium text-clapbac-navy truncate">{reviewer.displayName}</span>
+          <span className="font-medium text-brand-navy truncate">{reviewer.displayName}</span>
           {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -136,7 +136,7 @@ export function ReviewerSpotlight({ reviewer, title }) {
       <div className="flex items-center gap-3">
         <ReviewerAvatar reviewer={reviewer} size="md" />
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-clapbac-navy truncate">{reviewer.displayName}</h3>
+          <h3 className="font-semibold text-brand-navy truncate">{reviewer.displayName}</h3>
           <div className="flex items-center gap-2 mt-1">
             <StarRating rating={reviewer.aggregateRating} size="sm" />
           </div>

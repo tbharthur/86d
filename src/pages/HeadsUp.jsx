@@ -91,7 +91,7 @@ export function HeadsUp() {
           {/* Sidebar - Filters */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl border border-gray-200 p-5 sticky top-24">
-              <h3 className="font-semibold text-clapbac-navy mb-4">Filter by Behavior</h3>
+              <h3 className="font-semibold text-brand-navy mb-4">Filter by Behavior</h3>
               <div className="space-y-2">
                 <button
                   onClick={() => setFilterTag('all')}
@@ -124,7 +124,7 @@ export function HeadsUp() {
 
               {/* Top Flags */}
               <div className="mt-6 pt-6 border-t border-gray-200">
-                <h3 className="font-semibold text-clapbac-navy mb-3">Most Reported Issues</h3>
+                <h3 className="font-semibold text-brand-navy mb-3">Most Reported Issues</h3>
                 <div className="space-y-2">
                   {topFlags.map(([flag, count]) => (
                     <div key={flag} className="flex items-center justify-between text-sm">
@@ -142,7 +142,7 @@ export function HeadsUp() {
           {/* Main List */}
           <div className="lg:col-span-3">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-display text-xl font-semibold text-clapbac-navy">
+              <h2 className="font-display text-xl font-semibold text-brand-navy">
                 {filterTag === 'all' ? 'All Flagged Reviewers' : `${tagInfo[filterTag]?.label}`}
               </h2>
               <span className="text-sm text-gray-500">{filteredReviewers.length} reviewers</span>
@@ -209,7 +209,7 @@ function HeadsUpCard({ reviewer, flags }) {
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-semibold text-clapbac-navy">{reviewer.displayName}</h3>
+              <h3 className="font-semibold text-brand-navy">{reviewer.displayName}</h3>
               {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
             </div>
             <p className="text-sm text-gray-500">{reviewer.location}</p>

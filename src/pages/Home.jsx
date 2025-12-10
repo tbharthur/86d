@@ -33,14 +33,14 @@ export function Home({ onWriteReview }) {
       <section className="relative text-white py-20 px-4 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)' }}>
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-clapbac-gold/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-clapbac-purple/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-clapbac-gold/10 to-transparent rounded-full"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-brand-gold/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-brand-gold/10 to-transparent rounded-full"></div>
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-            <span className="text-xl">👏</span>
+            <span className="text-xl">🚫</span>
             <span className="text-sm font-medium text-white/90">The restaurant industry's secret weapon</span>
           </div>
 
@@ -57,11 +57,11 @@ export function Home({ onWriteReview }) {
 
           <div className="flex items-center justify-center gap-8 mt-10 text-sm text-white/50">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-clapbac-mint rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-brand-mint rounded-full animate-pulse"></span>
               <span>15+ reviewers tracked</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-clapbac-gold rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
               <span>35+ restaurant reviews</span>
             </div>
           </div>
@@ -87,8 +87,8 @@ export function Home({ onWriteReview }) {
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <span className="text-sm font-semibold text-clapbac-gold uppercase tracking-wider">Latest Activity</span>
-                <h2 className="font-display text-2xl font-bold text-clapbac-navy">
+                <span className="text-sm font-semibold text-brand-gold uppercase tracking-wider">Latest Activity</span>
+                <h2 className="font-display text-2xl font-bold text-brand-navy">
                   Recent Reviews
                 </h2>
               </div>
@@ -108,10 +108,10 @@ export function Home({ onWriteReview }) {
             {/* Wall of Fame Preview */}
             <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-5 border border-emerald-100 shadow-soft">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display text-lg font-semibold text-clapbac-navy flex items-center gap-2">
+                <h3 className="font-display text-lg font-semibold text-brand-navy flex items-center gap-2">
                   <span className="text-2xl">🏆</span> Wall of Fame
                 </h3>
-                <Link to="/wall-of-fame" className="text-sm font-medium text-clapbac-mint hover:text-clapbac-mint-light transition-colors">
+                <Link to="/wall-of-fame" className="text-sm font-medium text-brand-mint hover:text-brand-mint-light transition-colors">
                   See all →
                 </Link>
               </div>
@@ -128,10 +128,10 @@ export function Home({ onWriteReview }) {
             {/* Heads Up Preview */}
             <div className="bg-gradient-to-br from-rose-50 to-white rounded-2xl p-5 border border-rose-100 shadow-soft">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-display text-lg font-semibold text-clapbac-navy flex items-center gap-2">
+                <h3 className="font-display text-lg font-semibold text-brand-navy flex items-center gap-2">
                   <span className="text-2xl">⚠️</span> Heads Up
                 </h3>
-                <Link to="/heads-up" className="text-sm font-medium text-clapbac-coral hover:text-clapbac-coral-light transition-colors">
+                <Link to="/heads-up" className="text-sm font-medium text-brand-coral hover:text-brand-coral-light transition-colors">
                   See all →
                 </Link>
               </div>
@@ -146,8 +146,8 @@ export function Home({ onWriteReview }) {
             </div>
 
             {/* CTA */}
-            <div className="relative bg-gradient-to-br from-clapbac-navy to-clapbac-navy-light rounded-2xl p-6 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-clapbac-gold/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+            <div className="relative bg-gradient-to-br from-brand-navy to-brand-navy-light rounded-2xl p-6 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
               <div className="relative z-10">
                 <h3 className="font-display font-semibold text-white mb-2 text-lg">
                   Had a notable experience?
@@ -167,14 +167,14 @@ export function Home({ onWriteReview }) {
       {/* How It Works */}
       <section className="bg-gradient-to-br from-slate-50 to-white py-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-50">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-clapbac-gold/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-clapbac-mint/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-brand-mint/5 rounded-full blur-3xl"></div>
         </div>
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <span className="inline-block text-sm font-semibold text-clapbac-gold uppercase tracking-wider mb-2">Simple Process</span>
-            <h2 className="font-display text-3xl font-bold text-clapbac-navy">
-              How CLAPBAC Works
+            <span className="inline-block text-sm font-semibold text-brand-gold uppercase tracking-wider mb-2">Simple Process</span>
+            <h2 className="font-display text-3xl font-bold text-brand-navy">
+              How 86'd Works
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-10">
@@ -231,13 +231,13 @@ function StatCard({ label, value, icon, highlight = false }) {
       <div className="flex items-center gap-4">
         <div className={`p-3 rounded-xl ${
           highlight
-            ? 'bg-gradient-to-br from-clapbac-coral to-clapbac-coral-light text-white shadow-glow-coral'
-            : 'bg-gradient-to-br from-clapbac-gold to-clapbac-gold-light text-white shadow-glow'
+            ? 'bg-gradient-to-br from-brand-coral to-brand-coral-light text-white shadow-glow-coral'
+            : 'bg-gradient-to-br from-brand-gold to-brand-gold-light text-white shadow-glow'
         }`}>
           {icons[icon]}
         </div>
         <div>
-          <p className={`text-3xl font-bold font-display ${highlight ? 'text-clapbac-coral' : 'text-clapbac-navy'}`}>
+          <p className={`text-3xl font-bold font-display ${highlight ? 'text-brand-coral' : 'text-brand-navy'}`}>
             {value}
           </p>
           <p className="text-sm text-slate-500 font-medium">{label}</p>
@@ -251,12 +251,12 @@ function HowItWorksCard({ step, title, description }) {
   return (
     <div className="text-center group">
       <div className="relative w-16 h-16 mx-auto mb-5">
-        <div className="absolute inset-0 bg-clapbac-gold/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
-        <div className="relative w-16 h-16 bg-gradient-to-br from-clapbac-gold to-clapbac-gold-light text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-glow group-hover:scale-105 transition-transform duration-300">
+        <div className="absolute inset-0 bg-brand-gold/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300"></div>
+        <div className="relative w-16 h-16 bg-gradient-to-br from-brand-gold to-brand-gold-light text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-glow group-hover:scale-105 transition-transform duration-300">
           {step}
         </div>
       </div>
-      <h3 className="font-display font-semibold text-clapbac-navy mb-2 text-lg">{title}</h3>
+      <h3 className="font-display font-semibold text-brand-navy mb-2 text-lg">{title}</h3>
       <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
     </div>
   );

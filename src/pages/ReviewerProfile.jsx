@@ -19,7 +19,7 @@ export function ReviewerProfile({ onWriteReview }) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-clapbac-navy mb-2">Reviewer Not Found</h1>
+          <h1 className="text-2xl font-bold text-brand-navy mb-2">Reviewer Not Found</h1>
           <p className="text-gray-600 mb-4">This reviewer doesn't exist in our system.</p>
           <Link to="/browse" className="btn-primary">Browse Reviewers</Link>
         </div>
@@ -81,7 +81,7 @@ export function ReviewerProfile({ onWriteReview }) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero/Header */}
-      <div className="bg-gradient-to-br from-clapbac-navy to-clapbac-navy-light text-white">
+      <div className="bg-gradient-to-br from-brand-navy to-brand-navy-light text-white">
         <div className="max-w-5xl mx-auto px-4 py-8">
           <Link
             to="/browse"
@@ -144,7 +144,7 @@ export function ReviewerProfile({ onWriteReview }) {
           <div className="lg:col-span-2">
             {/* Tags */}
             <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6">
-              <h2 className="font-semibold text-clapbac-navy mb-3">Community Tags</h2>
+              <h2 className="font-semibold text-brand-navy mb-3">Community Tags</h2>
               <div className="flex flex-wrap gap-2">
                 {(showAllTags ? reviewer.tags : reviewer.tags.slice(0, 5)).map(tag => (
                   <TagBadge key={tag} tag={tag} size="md" />
@@ -152,7 +152,7 @@ export function ReviewerProfile({ onWriteReview }) {
                 {reviewer.tags.length > 5 && !showAllTags && (
                   <button
                     onClick={() => setShowAllTags(true)}
-                    className="text-sm text-clapbac-gold hover:underline"
+                    className="text-sm text-brand-gold hover:underline"
                   >
                     +{reviewer.tags.length - 5} more
                   </button>
@@ -163,7 +163,7 @@ export function ReviewerProfile({ onWriteReview }) {
             {/* Reviews */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="font-semibold text-clapbac-navy">
+                <h2 className="font-semibold text-brand-navy">
                   Reviews from Restaurants ({reviews.length})
                 </h2>
                 <select
@@ -208,7 +208,7 @@ export function ReviewerProfile({ onWriteReview }) {
           <div className="space-y-6">
             {/* Rating Breakdown */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
-              <h3 className="font-semibold text-clapbac-navy mb-4">Rating Distribution</h3>
+              <h3 className="font-semibold text-brand-navy mb-4">Rating Distribution</h3>
               {[5, 4, 3, 2, 1].map(stars => {
                 const count = ratingDistribution[stars - 1];
                 const percentage = reviews.length > 0 ? (count / reviews.length) * 100 : 0;
@@ -217,7 +217,7 @@ export function ReviewerProfile({ onWriteReview }) {
                     <span className="text-sm text-gray-600 w-6">{stars}★</span>
                     <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-clapbac-gold rounded-full transition-all"
+                        className="h-full bg-brand-gold rounded-full transition-all"
                         style={{ width: `${percentage}%` }}
                       />
                     </div>
@@ -229,7 +229,7 @@ export function ReviewerProfile({ onWriteReview }) {
 
             {/* Category Averages */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
-              <h3 className="font-semibold text-clapbac-navy mb-4">Category Ratings</h3>
+              <h3 className="font-semibold text-brand-navy mb-4">Category Ratings</h3>
               <div className="space-y-3">
                 <CategoryBar label="Accuracy" value={categoryAverages.accuracy} />
                 <CategoryBar label="Tipping" value={categoryAverages.tipping} />
@@ -239,7 +239,7 @@ export function ReviewerProfile({ onWriteReview }) {
                 <div className="pt-2 border-t border-gray-100">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Disclosure Rate</span>
-                    <span className="font-semibold text-clapbac-navy">{disclosureRate}%</span>
+                    <span className="font-semibold text-brand-navy">{disclosureRate}%</span>
                   </div>
                 </div>
               </div>
@@ -272,12 +272,12 @@ export function ReviewerProfile({ onWriteReview }) {
 
             {/* Handles */}
             <div className="bg-white rounded-xl border border-gray-200 p-5">
-              <h3 className="font-semibold text-clapbac-navy mb-3">Platform Profiles</h3>
+              <h3 className="font-semibold text-brand-navy mb-3">Platform Profiles</h3>
               <div className="space-y-2">
                 {Object.entries(reviewer.handles).map(([platform, handle]) => (
                   <div key={platform} className="flex items-center justify-between text-sm">
                     <span className="text-gray-600 capitalize">{platform}</span>
-                    <span className="font-medium text-clapbac-navy">{handle}</span>
+                    <span className="font-medium text-brand-navy">{handle}</span>
                   </div>
                 ))}
               </div>
@@ -304,7 +304,7 @@ function CategoryBar({ label, value }) {
     <div>
       <div className="flex items-center justify-between text-sm mb-1">
         <span className="text-gray-600">{label}</span>
-        <span className="font-semibold text-clapbac-navy">{value}</span>
+        <span className="font-semibold text-brand-navy">{value}</span>
       </div>
       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
         <div

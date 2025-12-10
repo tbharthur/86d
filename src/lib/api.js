@@ -1,4 +1,4 @@
-// API client for CLAPBAC backend
+// API client for 86'd backend
 
 const API_BASE = '/api';
 

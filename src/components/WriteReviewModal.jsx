@@ -105,7 +105,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
     <div className="modal-backdrop" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl animate-fade-in mx-4">
         {/* Header */}
-        <div className="bg-clapbac-navy text-white px-6 py-4 flex items-center justify-between">
+        <div className="bg-brand-navy text-white px-6 py-4 flex items-center justify-between">
           <div>
             <h2 className="font-display text-xl font-semibold">Write a Review</h2>
             <p className="text-sm text-white/70">
@@ -131,7 +131,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-clapbac-navy mb-2">Review Submitted!</h3>
+              <h3 className="text-xl font-semibold text-brand-navy mb-2">Review Submitted!</h3>
               <p className="text-gray-600">
                 Your review of {selectedReviewer?.displayName} has been posted.
               </p>
@@ -141,7 +141,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
           {/* Step 1: Select Reviewer */}
           {!submitted && step === 1 && (
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-clapbac-navy mb-4">
+              <h3 className="text-lg font-semibold text-brand-navy mb-4">
                 Who are you reviewing?
               </h3>
 
@@ -168,12 +168,12 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
                   <button
                     key={reviewer.id}
                     onClick={() => handleSelectReviewer(reviewer)}
-                    className="w-full text-left p-3 rounded-lg border border-gray-200 hover:border-clapbac-gold hover:bg-clapbac-gold/5 transition-colors flex items-center gap-3"
+                    className="w-full text-left p-3 rounded-lg border border-gray-200 hover:border-brand-gold hover:bg-brand-gold/5 transition-colors flex items-center gap-3"
                   >
                     <ReviewerAvatar reviewer={reviewer} size="md" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium text-clapbac-navy">{reviewer.displayName}</span>
+                        <span className="font-medium text-brand-navy">{reviewer.displayName}</span>
                         {reviewer.eliteStatus && <EliteBadge years={reviewer.eliteYears} />}
                       </div>
                       <div className="flex items-center gap-2 mt-0.5">
@@ -209,7 +209,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
                 <ReviewerAvatar reviewer={selectedReviewer} size="md" />
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-clapbac-navy">{selectedReviewer.displayName}</span>
+                    <span className="font-semibold text-brand-navy">{selectedReviewer.displayName}</span>
                     {selectedReviewer.eliteStatus && <EliteBadge years={selectedReviewer.eliteYears} />}
                   </div>
                   <p className="text-sm text-gray-500">{selectedReviewer.location}</p>
@@ -218,7 +218,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="text-sm text-clapbac-gold hover:underline"
+                    className="text-sm text-brand-gold hover:underline"
                   >
                     Change
                   </button>
@@ -227,7 +227,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
 
               {/* Overall Rating */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-clapbac-navy mb-2">
+                <label className="block text-sm font-medium text-brand-navy mb-2">
                   Overall Rating *
                 </label>
                 <StarRating
@@ -249,7 +249,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
 
               {/* Review Content */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-clapbac-navy mb-2">
+                <label className="block text-sm font-medium text-brand-navy mb-2">
                   Your Experience *
                 </label>
                 <textarea
@@ -267,7 +267,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
 
               {/* Category Ratings */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-clapbac-navy mb-3">
+                <label className="block text-sm font-medium text-brand-navy mb-3">
                   Category Ratings
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -302,7 +302,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
                       type="button"
                       onClick={() => setFormData(prev => ({ ...prev, disclosed: !prev.disclosed }))}
                       className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                        formData.disclosed ? 'bg-clapbac-gold' : 'bg-gray-300'
+                        formData.disclosed ? 'bg-brand-gold' : 'bg-gray-300'
                       }`}
                     >
                       <span
@@ -317,7 +317,7 @@ export function WriteReviewModal({ isOpen, onClose, preselectedReviewer = null }
 
               {/* Red Flags */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-clapbac-navy mb-3">
+                <label className="block text-sm font-medium text-brand-navy mb-3">
                   Red Flags (optional)
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -377,7 +377,7 @@ function CategorySlider({ label, value, onChange }) {
     <div>
       <div className="flex items-center justify-between mb-1">
         <span className="text-sm text-gray-600">{label}</span>
-        <span className="text-sm font-semibold text-clapbac-navy">{value}/5</span>
+        <span className="text-sm font-semibold text-brand-navy">{value}/5</span>
       </div>
       <input
         type="range"
@@ -385,7 +385,7 @@ function CategorySlider({ label, value, onChange }) {
         max="5"
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value))}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-clapbac-gold"
+        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brand-gold"
       />
     </div>
   );

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'clapbac': {
+        'brand': {
           'gold': '#F59E0B',
           'gold-light': '#FBBF24',
           'gold-dark': '#D97706',

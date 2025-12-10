@@ -143,14 +143,14 @@ export function BrowseReviewers() {
             {/* Filter Toggle */}
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className={`btn-outline text-sm flex items-center gap-2 ${showFilters ? 'bg-clapbac-navy text-white' : ''}`}
+              className={`btn-outline text-sm flex items-center gap-2 ${showFilters ? 'bg-brand-navy text-white' : ''}`}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
               </svg>
               Filters
               {hasActiveFilters && (
-                <span className="bg-clapbac-gold text-white text-xs px-1.5 py-0.5 rounded-full">
+                <span className="bg-brand-gold text-white text-xs px-1.5 py-0.5 rounded-full">
                   {[filterPlatform !== 'all', filterRating !== 'all', filterTags.length > 0].filter(Boolean).length}
                 </span>
               )}
@@ -163,13 +163,13 @@ export function BrowseReviewers() {
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Platform Filter */}
                 <div>
-                  <label className="block text-sm font-medium text-clapbac-navy mb-2">Platform</label>
+                  <label className="block text-sm font-medium text-brand-navy mb-2">Platform</label>
                   <div className="flex flex-wrap gap-2">
                     <button
                       onClick={() => setFilterPlatform('all')}
                       className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
                         filterPlatform === 'all'
-                          ? 'bg-clapbac-navy border-clapbac-navy text-white'
+                          ? 'bg-brand-navy border-brand-navy text-white'
                           : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
                       }`}
                     >
@@ -181,7 +181,7 @@ export function BrowseReviewers() {
                         onClick={() => setFilterPlatform(platform)}
                         className={`px-3 py-1.5 rounded-full text-sm border transition-colors capitalize ${
                           filterPlatform === platform
-                            ? 'bg-clapbac-navy border-clapbac-navy text-white'
+                            ? 'bg-brand-navy border-brand-navy text-white'
                             : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
                         }`}
                       >
@@ -193,7 +193,7 @@ export function BrowseReviewers() {
 
                 {/* Rating Filter */}
                 <div>
-                  <label className="block text-sm font-medium text-clapbac-navy mb-2">Rating</label>
+                  <label className="block text-sm font-medium text-brand-navy mb-2">Rating</label>
                   <div className="flex flex-wrap gap-2">
                     {[
                       { value: 'all', label: 'All Ratings' },
@@ -206,7 +206,7 @@ export function BrowseReviewers() {
                         onClick={() => setFilterRating(option.value)}
                         className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
                           filterRating === option.value
-                            ? 'bg-clapbac-navy border-clapbac-navy text-white'
+                            ? 'bg-brand-navy border-brand-navy text-white'
                             : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400'
                         }`}
                       >
@@ -234,7 +234,7 @@ export function BrowseReviewers() {
 
               {/* Tag Filters */}
               <div className="mt-4">
-                <label className="block text-sm font-medium text-clapbac-navy mb-2">Tags</label>
+                <label className="block text-sm font-medium text-brand-navy mb-2">Tags</label>
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
                     {tagCategories.positive.slice(0, 6).map(tag => (
@@ -292,7 +292,7 @@ export function BrowseReviewers() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-clapbac-navy mb-2">No reviewers found</h3>
+            <h3 className="text-lg font-semibold text-brand-navy mb-2">No reviewers found</h3>
             <p className="text-gray-600 mb-4">Try adjusting your search or filters</p>
             <button onClick={clearFilters} className="btn-outline">
               Clear all filters
