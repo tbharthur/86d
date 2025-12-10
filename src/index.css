@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #D4A853;
+  --color-navy: #1E2A3A;
+}
+
+body {
+  @apply bg-clapbac-cream text-clapbac-navy font-body;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-clapbac-navy/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-clapbac-navy/50;
+}
+
+/* Star rating animations */
+.star-filled {
+  @apply text-clapbac-gold;
+}
+
+.star-empty {
+  @apply text-gray-300;
+}
+
+/* Card hover effects */
+.reviewer-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.reviewer-card:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+/* Tag styles */
+.tag-positive {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.tag-negative {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.tag-neutral {
+  @apply bg-gray-100 text-gray-700 border-gray-200;
+}
+
+.tag-warning {
+  @apply bg-amber-100 text-amber-800 border-amber-200;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-clapbac-gold hover:bg-clapbac-gold-dark text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-clapbac-navy hover:bg-clapbac-navy-light text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-outline {
+  @apply border-2 border-clapbac-navy text-clapbac-navy hover:bg-clapbac-navy hover:text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-clapbac-gold focus:border-transparent outline-none transition-all;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
