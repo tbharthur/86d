@@ -28,9 +28,9 @@ export function Navbar({ onWriteReview }) {
               </div>
               <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-clapbac-coral rounded-full animate-pulse"></div>
             </div>
-            <div className="hidden sm:block">
-              <span className="font-display text-xl font-bold tracking-tight">CLAP<span className="text-clapbac-gold">BAC</span></span>
-              <span className="block text-[10px] text-white/50 -mt-1 font-accent tracking-widest">TURN THE TABLES</span>
+            <div>
+              <span className="font-display text-lg sm:text-xl font-bold tracking-tight">CLAP<span className="text-clapbac-gold">BAC</span></span>
+              <span className="hidden sm:block text-[10px] text-white/50 -mt-1 font-accent tracking-widest">TURN THE TABLES</span>
             </div>
           </Link>
 
